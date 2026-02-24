@@ -8,30 +8,32 @@
 % \addbibresource{references.bib}
 
 % --- METADATA ---
-% While the Fancyhdr in the preamble handles the page headers,
-% defining these allows you to use \maketitle if you want a cover page.
+% Title Component
 \title{Problem Set 1: Title}
 \author{Surname, First Name}
 \date{\today}
 
-% You can edit the header in preamble.tex.
-
-\begin{document}
-
-% Optional: Create a title block at the top of the first page
 % \maketitle
 % \thispagestyle{fancy} % Ensures header appears on the first page if maketitle is used
 
+% Edit Header
+\pagestyle{fancy}
+\fancyhead[L]{COURSE}           
+\fancyhead[C]{Problem Set No.}      
+\fancyhead[R]{Surname, First Name}          
+\setlength{\headheight}{15pt}
+
+\begin{document}
 % --- PROBLEM INCLUSION ---
 % Comment out lines to "mute" problems you aren't working on.
 % This speeds up compilation significantly.
 
+\input{problems/prob0} \newpage % Example template. Comment this out when using the template by adding % at the start of the line.
+
 \input{problems/prob1}
 \newpage
-% \input{problems/prob2}
-% \newpage
 
-% \input{problems/prob3}
+% \input{problems/prob2}
 % \newpage
 
 % --- REFERENCES ---

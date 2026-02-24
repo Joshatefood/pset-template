@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # LaTeX Physics Problem Set Template
+=======
+# LaTeX Problem Set Template
+>>>>>>> 962b28f (Moved header settings to main.tex)
 
 Modular LaTeX template for clean, structured physics and mathematics problem sets.
 
@@ -27,6 +31,10 @@ pset-template/
 │   ├── problem2.tex
 │   └── …
 ├── example.pdf
+<<<<<<< HEAD
+=======
+├── references.bib 
+>>>>>>> 962b28f (Moved header settings to main.tex)
 └── README.md
 ```
 
@@ -72,8 +80,13 @@ This keeps problem sets readable, consistent, and easy to reuse across courses.
 
 Common edits:
 
+<<<<<<< HEAD
 * Header / Macros → `preamble.tex`
 * Problem order → `main.tex`
+=======
+* Packages and macros → `preamble.tex`
+* Header and problem order → `main.tex`
+>>>>>>> 962b28f (Moved header settings to main.tex)
 * New problems → `problems/`
 
 ---
