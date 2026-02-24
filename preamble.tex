@@ -1,0 +1,97 @@
+% --- BASIC FORMATTING ---
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{parskip}              % Paragraph spacing (no indentation)
+\usepackage{microtype}            % Better kerning
+\usepackage{float}                % [H] placement
+\usepackage{booktabs}             % Professional tables (great for labs)
+\usepackage{enumitem}             % Better control over lists (1.a, 1.b, etc.)
+
+% --- MATH & PHYSICS PACKAGES ---
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+\usepackage{esint}                % \oiint etc.
+\usepackage{tensor}               % \tensor{\Lambda}{^\mu_\nu}
+\usepackage{cancel}               
+\usepackage{bm}                   % Proper bold math for vectors: \bm{v}
+\usepackage{slashed}              % Dirac slashes for particle physics: \slashed{p}
+
+% [CRITICAL FIX: The Peace Treaty] 
+\usepackage{physics}              
+\usepackage{siunitx}              
+% Force \qty to use the siunitx definition (for units like \qty{5}{m})
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+% --- VISUALS & PLOTS (TikZ) ---
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{
+    arrows.meta,          % Better, customizable arrow heads
+    calc,                 % Coordinate math (e.g., midpoints)
+    decorations.pathmorphing, % For springs and wavy photon lines
+    decorations.markings, % For placing arrows along a path
+    positioning,          % Relative node placement
+    intersections         % Automatic detection of line crossings
+}
+
+\usepackage[most]{tcolorbox}      % 'most' loads the enhanced skin
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% --- HYPERLINKS & REFERENCING ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+% Cleveref must be loaded after hyperref
+\usepackage[nameinlink, noabbrev]{cleveref} % \cref{eq:1} -> Equation 1
+\crefname{figure}{Fig.}{Figs.}
+\crefname{equation}{Eq.}{Eqs.}
+
+
+% --- CUSTOM COMMANDS (Retained) ---
+% Sets
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+% Physics
+\newcommand{\Lag}{\mathcal{L}}
+\newcommand{\Ham}{\mathcal{H}}
+\newcommand{\Hil}{\mathcal{H}}
+
+% Text in math
+\newcommand{\textif}{\quad\text{if}\quad}
+\newcommand{\textand}{\quad\text{and}\quad}
+\newcommand{\LHS}{\text{LHS}}
+\newcommand{\RHS}{\text{RHS}}
+
+
+% --- ENVIRONMENT SETUP ---
+\pagestyle{fancy}
+\fancyhead[L]{COURSE}           
+\fancyhead[C]{Problem Set No.}      
+\fancyhead[R]{Surname, First Name}          
+\setlength{\headheight}{15pt}
+
+% Problem Box
+\newtcolorbox{problem}[1]{
+    colback=gray!10!white,
+    colframe=black,
+    title=\textbf{Problem #1},
+    arc=3mm,
+    boxrule=0.5pt,
+    parbox=false,
+    enhanced,
+    breakable                     % Allows the box to split across pages
+}
+
+% Solution Environment
+\newenvironment{solution}
+    {\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Solution]}
+    {\end{proof}}

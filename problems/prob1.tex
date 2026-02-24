@@ -1,0 +1,42 @@
+% !TeX root = ../main.tex
+
+\begin{problem}{Arfken 1-23}
+    Problem goes here.
+\end{problem}
+
+\begin{solution}
+    Write your solution here.
+
+    \section{Equation Labelling and Referencing}
+    Equations are automatically numbered. Label equations using \verb|\label| and reference using \verb|\cref|. For example:
+    \begin{equation} \label{eq:force}
+        F = ma
+    \end{equation}
+    Based on \cref{eq:force}, force is directly proportional to mass.
+
+    \section{Multiline Equations}
+    Create multiline equations using \verb|\begin{align} ... \end{align}|:
+    \begin{align}
+        y &= mx + b, \\ 
+        x &= \frac{y-b}{m}.
+    \end{align}
+    The equations equations align on \verb|&| line break on \verb|\\|.
+
+    \section{Matrices}
+    Create matrices using \verb|\begin{matrix} ... \end{matrix}|. 
+    
+    (You may also use \texttt{vmatrix, Vmatrix, pmatrix, Pmatrix, instead of matrix}).
+    \begin{equation}
+    \begin{matrix}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9
+    \end{matrix}
+    \to
+    \begin{pmatrix}
+        \alpha & \beta & \gamma \\
+        \theta & \phi & \epsilon \\
+        \psi & \omega & \pi
+    \end{pmatrix}
+    \end{equation}
+\end{solution}
